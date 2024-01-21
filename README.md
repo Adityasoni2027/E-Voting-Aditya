@@ -15,7 +15,7 @@ This project is a Realtime E-Voting System implemented using HTML, CSS, JavaScri
 - Firebase (Realtime for data storage, Authentication for user authentication)
 
 ## Getting Started
- Deployed Link :: https://65ac4ae19fb39feb670c7006--super-cactus-41fc0b.netlify.app/
+ Deployed Link ::https://65ac997e865d581676fce5bf--dulcet-kringle-a5c7f1.netlify.app/
 ## Firebase Setup
 1. Create a new Firebase project on the [Firebase Console](https://console.firebase.google.com/).
 2. Copy your Firebase configuration object from the project settings.
