@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #4CAF50;
+    }
+
+    #logout {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em;
+      margin: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    #logout:hover {
+      background-color: #45a049;
+    }
+
+    .blog-5 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .card {
+      width: 300px;
+      margin: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .bollywood-icon {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #4CAF50;
+    }
+
+    .content4 {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .heading1 {
+      font-size: 1.5em;
+      margin: 10px 0;
+      color: #4CAF50;
+    }
+
+    .text1 {
+      font-size: 1em;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="button" value="Logout" id="logout">
+
+  <header>
+    <h1 style="font-size: 2em;">Decentralized Voting System</h1>
+  </header>
+  <div class="blog-5">
+
+    <div class="content1">
+      <div class="content2">
+
+
+        <div class="content3">
+          <div class="row">
+
+            <div class="card">
+              <a href="Actor2.html">
+                <img class="bollywood-icon" alt="" src="./public/bollywood@2x.png" />
+                <div class="content4">
+                  <b class="heading1">Bollywood</b>
+                  <div class="text1">Choose Favourite Actor</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="card">
+              <a href="Game.html">
+                <img class="bollywood-icon" alt="" src="download33sdsdsd.jpeg" ><div class="content4">
+                <b class="heading1">Sports</b>
+                <div class="text1">Tell me your Favourite Game</div>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <a href="sgelections.html">
+              <img class="bollywood-icon" alt="" src="./public/sg@2x.png" />
+              <div class="content4">
+                <b class="heading1">Student Gymkhana</b>
+                <div class="text1">CANDIDATES NOMINATION</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="CEO.html">
+              <img class="bollywood-icon" alt="" src="download (1)3232.jpeg" />
+              <div class="content4">
+                <b class="heading1">CEO</b>
+                <div class="text1">Choose Favourite CEO</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="card">
+            <a href="Ipl.html">
+              <img class="bollywood-icon" alt="" src="./public/placeholder-image@2x.png" />
+              <div class="content4">
+                <b class="heading1">IPL</b>
+                <div class="text1">
+                  <p class="choose">Choose Winner Team</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="card">
+            <a href="carrer2.html">
+              <img class="bollywood-icon" alt="" src="data:image/jpeg;base64,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" />
+              <div class="content4">
+                <b class="heading1">Create Poll</b>
+                <div class="text1">Unleash Freedom</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+    let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+    let logoutBtn = document.getElementById("logout");
+
+    let logout = () => {
+      sessionStorage.removeItem("user-creds");
+      sessionStorage.removeItem("user-info");
+      window.location.href = "login.html";
+    };
+
+    logoutBtn.addEventListener("click", logout);
+
+
+  </script>
+</body>
+
+</html>

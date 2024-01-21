@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" />
+
+</head>
+
+<body>
+    <div class="navbig">
+        <div class="navbar">
+            <!-- Logo on the left -->
+            <div class="logo">
+                <a href="home.html">
+                    <img src="ISMlogo.jpeg" alt="Logo" />
+                </a>
+            </div>
+
+            <!-- Search bar -->
+            <input type="text" id="searchInput" placeholder="Search by name" oninput="searchPersons()">
+            <script>
+
+                function searchPersons() {
+                    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                    const persons = document.querySelectorAll('.harshal');
+
+                    persons.forEach(person => {
+                        const name = person.querySelector('.name').textContent.toLowerCase();
+
+                        // Check if the name contains the search input
+                        if (name.includes(searchInput)) {
+                            person.style.display = 'block'; // Show the person
+                        } else {
+                            person.style.display = 'none'; // Hide the person
+                        }
+                    });
+                }
+
+                // Initial display of all persons
+                searchPersons();
+            </script>
+
+            <!-- Navbar links -->
+            <ul class="nav-links">
+                <li><a href="Actor2.html">Bollywood</a></li>
+                <li><a href="Game.html">Sports</a></li>
+                <li><a href="sgelections.html">SG Election</a></li>
+                <li><a href="CEO.html">CEO</a></li>
+                <li><a href="Ipl.html">IPL</a></li>
+                <li><a href="carrer2.html">Create Poll</a></li>
+            </ul>
+
+
+            <!-- Connect Metamask -->
+            <button id="connect-button"> 🦊Metamask</button>
+            <script src="metamask.js"></script>
+
+        </div>
+        <style>
+            body {
+                font-family: "Arial", sans-serif;
+                background-color: #1c0606;
+                margin: 0;
+            }
+
+            /* Navbar styles */
+            .navbar {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+            }
+
+
+            .logo img {
+                max-height: 40px;
+
+            }
+
+            .logo a:hover img {
+                transform: scale(1.1);
+                /* Adjust the scaling factor for the hover effect */
+            }
+
+
+            #searchInput {
+                width: 250px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                background-color: #ecf0f1;
+                color: #2c3e50;
+                outline: none;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+            #searchInput::placeholder {
+                color: #7f8c8d;
+            }
+
+            #searchInput:focus {
+                background-color: #ffffff;
+                color: #333333;
+            }
+
+            .nav-links {
+                list-style: none;
+                display: flex;
+                margin-left: auto;
+            }
+
+            .nav-links li {
+                margin-right: 15px;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .action-btn {
+                margin-left: 10px;
+                background-color: #28a745;
+                color: #fff;
+                padding: 8px 15px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .action-btn:hover {
+                background-color: #218838;
+            }
+
+            /* Responsive styles */
+            @media (max-width: 768px) {
+                .search-bar {
+                    display: none;
+                }
+
+                .nav-links {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 60px;
+                    left: 0;
+                    width: 100%;
+                    background-color: #333;
+                }
+
+                .nav-links.show {
+                    display: flex;
+                }
+
+                .nav-links li {
+                    margin: 0;
+                    text-align: center;
+                    padding: 10px;
+                }
+
+                .action-btn {
+                    margin-left: auto;
+                    margin-right: 10px;
+                }
+            }
+        </style>
+        <script>
+            // JavaScript for toggling mobile navigation
+            document.addEventListener("DOMContentLoaded", function () {
+                document
+                    .querySelector(".toggle_btn")
+                    .addEventListener("click", function () {
+                        document.querySelector(".nav-links").classList.toggle("show");
+                    });
+            })
+
+        </script>
+    </div>
+
+    <div class="candidates">
+        <!-- Main container for candidate information -->
+        <div class="g1">
+            <!-- Group 1 container -->
+            <div class="section-title">
+                <!-- Section title containing subheading and content -->
+                <div class="content">
+                    <h1 class="heading">Bollywood</h1>
+                    <h3 class="nominationcandidates1">Choose Favourite Actor</h3>
+                </div>
+            </div>
+            <div class="group-1-javascript">
+                <!-- Container for JavaScript Group 1 -->
+                <div class="group-2-javascript">
+                    <!-- Nested container for JavaScript Group 2 -->
+                    <div class="row">
+                        <!-- Row container for organizing candidate information -->
+
+                        <div class="harshal" id="person1" onclick="selectPerson('person1')">
+                            <img class="harshal-icon"
+                                src="https://m.media-amazon.com/images/M/MV5BODI4NDY1NzkyM15BMl5BanBnXkFtZTgwNzM3MDM0OTE@._V1_UY209_CR13,0,140,209_AL_.jpg"
+                                alt="Akshay Kumar">
+                            <div class="title">
+                                <!-- Container for the candidate's title information -->
+                                <div class="title">
+                                    <!-- Nested container for the title information -->
+                                    <div class="name">Akshay Kumar</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person2" onclick="selectPerson('person2')">
+                            <img class="harshal-icon"
+                                src="https://m.media-amazon.com/images/M/MV5BZDk1ZmU0NGYtMzQ2Yi00N2NjLTkyNWEtZWE2NTU4NTJiZGUzXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UY209_CR3,0,140,209_AL_.jpg"
+                                alt="Shahrukh Khan">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Shahrukh Khan</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person3" onclick="selectPerson('person3')">
+                            <img class="harshal-icon"
+                                src="https://m.media-amazon.com/images/M/MV5BNTk1OTUxMzIzMV5BMl5BanBnXkFtZTcwMzMxMjI0Nw@@._V1_UY209_CR6,0,140,209_AL_.jpg"
+                                alt="Amitabh Bachchan">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Amitabh Bachchan</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person4" onclick="selectPerson('person4')">
+                            <img class="harshal-icon" alt="" img
+                                src="https://m.media-amazon.com/images/M/MV5BMjUyMWE5MjUtMDlkMC00ODc0LThkOTgtNjZhNDgyMTU5ZDhlXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UX140_CR0,0,140,209_AL_.jpg"
+                                alt="Anil Kapoor">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Anil Kapoor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="harshal" id="person5" onclick="selectPerson('person5')">
+                            <img class="harshal-icon"
+                                src="https://m.media-amazon.com/images/M/MV5BMjI4MzQyODYwOF5BMl5BanBnXkFtZTgwMTcxMTIzOTE@._V1_UY209_CR87,0,140,209_AL_.jpg"
+                                alt="Chiranjeevi">
+
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Nana Patekar</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person6" onclick="selectPerson('person6')">
+                            <img class="harshal-icon"
+                                src="https://m.media-amazon.com/images/M/MV5BNGFlYzAyYjgtNzRjNS00NmE4LTliOGYtYzBkYzU5MzRhMDM0XkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UX140_CR0,0,140,209_AL_.jpg"
+                                alt="Deepika Padukone">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Deepika Padukone</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person7" onclick="selectPerson('person7')">
+                            <img class="harshal-icon"
+                                src="https://m.media-amazon.com/images/M/MV5BNzEwNDgwMTk3Nl5BMl5BanBnXkFtZTgwNjMwOTU4MDI@._V1_UY209_CR14,0,140,209_AL_.jpg"
+                                alt="Govinda">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Govinda</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person8" onclick="selectPerson('person8')">
+                            <img class="harshal-icon" alt=""
+                                src="https://m.media-amazon.com/images/M/MV5BOGM4NDFlNzItNzM1YS00Njk5LThlNDItZmRjNDZlYWY0ZjJkXkEyXkFqcGdeQXVyNDI3NjU1NzQ@._V1_UX140_CR0,0,140,209_AL_.jpg"
+                                alt="Hrithik Roshan">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Hrithik Roshan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="confirm-button-group1">
+                    <div class="section-title">
+                        <!-- Container for the section title -->
+                        <b class="heading1">Favourite Actor</b>
+                        <div class="text">confirm Your Vote</div>
+                        <!-- Subtitle confirming the action to confirm the vote -->
+                    </div>
+                    <div class="stylesecondary-smallfalse">
+                        <button id="confirmButton" onclick="confirmVote()">
+                            Confirm Vote
+                        </button>
+                    </div>
+                </div>
+                <script>
+                    // Here firstly the given variables used to track the selected person and voting confirmation status
+                    let selectedPerson = null;
+                    let votingConfirmed = false;
+
+                    // Now Function to confirm the vote
+                    function confirmVote() {
+                        // Check then if a person is selected
+                        if (!selectedPerson) {
+                            alert("Please select a person before confirming your vote.");
+                            return;
+                        }
+
+                        // Check if then voting has already been confirmed
+                        if (votingConfirmed) {
+                            alert("Voting has already been confirmed. You cannot confirm again.");
+                            return;
+                        }
+
+                        // Now apply selected style to the chosen person
+                        selectedPerson.classList.add("selected");
+
+                        // Now the actor's name in the input field
+                        const actorNameInput = document.getElementById("phone");
+                        actorNameInput.value = selectedPerson.querySelector('.name').textContent;
+
+                        // Then display confirmation message
+                        alert(`Vote confirmed for ${actorNameInput.value}`);
+
+                        // Then Update voting confirmation status
+                        votingConfirmed = true;
+                    }
+
+                    // Function to select a person
+                    function selectPerson(personId) {
+                        // Check if voting has been confirmed
+                        if (votingConfirmed) {
+                            alert("Voting has been confirmed. You cannot change your selection.");
+                            return;
+                        }
+
+                        // Remove selected style from the previously selected person
+                        if (selectedPerson) {
+                            selectedPerson.classList.remove("selected");
+                        }
+
+                        // used to update the selected person
+                        selectedPerson = document.getElementById(personId);
+                        selectedPerson.classList.add("selected");
+                    }
+                </script>
+                <script type="module" src="actor2.js"></script>
+
+
+
+
+                </head>
+
+                <body>
+                    <div class="box">
+                        <div class="form">
+                            <h2>Save Your Vote</h2>
+                            <form>
+                                <div class="inputbox">
+                                    <input type="text" value="" id="username" required>
+                                    <span>Your Name</span>
+                                </div>
+                                <div class="inputbox">
+                                    <input type="email" value="" id="email" required>
+                                    <span>Your E-mail</span>
+                                </div>
+                                <div class="inputbox">
+                                    <input type="text" value="" id="phone" required readonly>
+                                    <span>Actor Name</span>
+                                </div>
+                                <input type="submit" value="submit" class="sub" id="submit">
+                            </form>
+                        </div>
+                    </div>
+                    <style>
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+
+                        body {
+                            font-family: Arial, sans-serif;
+                        }
+
+                        /* Style the outer box */
+                        .box {
+                            width: 300px;
+                            margin: 50px auto;
+                            padding: 20px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            background-color: #f9f9f9;
+                        }
+
+                        /* Style the form container */
+                        .form {
+                            text-align: center;
+                        }
+
+                        /* Style the form title */
+                        .form h2 {
+                            color: #333;
+                            margin-bottom: 20px;
+                        }
+
+                        /* Style the input boxes */
+                        .inputbox {
+                            margin-bottom: 15px;
+                        }
+
+                        .inputbox input {
+                            width: 100%;
+                            padding: 8px;
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            border: 1px solid #ccc;
+                            border-radius: 3px;
+                        }
+
+                        .inputbox span {
+                            display: block;
+                            margin-bottom: 5px;
+                            color: #555;
+                        }
+
+                        /* Style the submit button */
+                        .sub {
+                            width: 100%;
+                            padding: 10px;
+                            background-color: #4caf50;
+                            color: #fff;
+                            border: none;
+                            border-radius: 3px;
+                            cursor: pointer;
+                        }
+
+                        /* Add some hover effect to the submit button */
+                        .sub:hover {
+                            background-color: #45a049;
+                        }
+                    </style>
+
+                    <!-- Table to display user information -->
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Your Name</th>
+                                <th>Your E-mail</th>
+                                <th>Actor Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Table body where user data will be dynamically populated -->
+                        </tbody>
+                    </table>
+
+                    <style>
+                        table {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        th,
+                        td {
+                            padding: 8px;
+                            text-align: left;
+                        }
+
+                        tr:hover {
+                            background-color: #7f55be;
+                            /* Hover color for all rows */
+                        }
+
+                        /* Responsive styles for the first table */
+                        @media only screen and (max-width: 600px) {
+
+                            th,
+                            td {
+                                display: block;
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+
+                            th,
+                            td:before {
+                                content: attr(data-label);
+                                font-weight: bold;
+                                display: inline-block;
+                                width: 50%;
+                            }
+                        }
+
+                        /* Responsive styles for the second table */
+                        @media only screen and (max-width: 600px) {
+
+                            #actorCountTable th,
+                            #actorCountTable td {
+                                display: block;
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+
+                            #actorCountTable th,
+                            #actorCountTable td:before {
+                                content: attr(data-label);
+                                font-weight: bold;
+                                display: inline-block;
+                                width: 50%;
+                            }
+                        }
+                    </style>
+
+                    <h2>Actor Count Summary</h2>
+                    <table border="1" id="actorCountTable">
+                        <thead>
+                            <tr>
+                                <th>Actor Name</th>
+                                <th>Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="actorCountBody"></tbody>
+                    </table>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            // Here the Initial setup
+                            updateActorCounts();
+
+                            // Here it's the function to update counting of actor
+                            function updateActorCounts() {
+                                var tableBody = document.getElementById("tableBody");
+                                var actorCounts = {};
+
+                                // Here the Loop through each row in the table
+                                for (var i = 0; i < tableBody.rows.length; i++) {
+                                    var actorName = tableBody.rows[i].cells[2].innerText;
+
+                                    // Update actor count
+                                    actorCounts[actorName] = (actorCounts[actorName] || 0) + 1;
+                                }
+
+                                // Get the actor count table body
+                                var actorCountBody = document.getElementById("actorCountBody");
+                                actorCountBody.innerHTML = ""; // Clear existing rows
+
+                                // Refill the actor count table
+                                for (var actor in actorCounts) {
+                                    var row = actorCountBody.insertRow();
+                                    var cell1 = row.insertCell(0);
+                                    var cell2 = row.insertCell(1);
+                                    cell1.innerText = actor;
+                                    cell2.innerText = actorCounts[actor];
+                                }
+                            }
+
+                            // Regularly update actor number in table
+                            setInterval(updateActorCounts, 5000); // Update every 5 seconds for demonstration
+                        });
+                    </script>
+
+
+
+                    <canvas id="pieChart"></canvas>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <style>
+                        h2 {
+                            text-align: center;
+                            margin-bottom: 2.5vw;
+                        }
+
+                        #pieChart {
+                            width: 90%;
+                            max-width: 400px;
+                            height: auto;
+                            margin: 0 auto;
+                            display: block;
+                        }
+
+                        @media screen and (min-width: 768px) {
+
+                            #pieChart {
+                                width: 70%;
+                            }
+                        }
+
+                        @media screen and (min-width: 1200px) {
+
+                            #pieChart {
+                                width: 60%;
+                            }
+                        }
+                    </style>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            // Initial setup
+
+                            updateActorCounts();
+
+                            // Here this is the Function to update actor counts
+                            function updateActorCounts() {
+                                var tableBody = document.getElementById("tableBody");
+                                var actorCounts = {};
+
+                                // Used Loop through each row in the table
+                                for (var i = 0; i < tableBody.rows.length; i++) {
+                                    var actorName = tableBody.rows[i].cells[2].innerText;
+
+                                    // Here to Update actor count
+                                    actorCounts[actorName] = (actorCounts[actorName] || 0) + 1;
+                                }
+
+                                // Now get the actor count table body
+                                var actorCountBody = document.getElementById("actorCountBody");
+                                actorCountBody.innerHTML = ""; // Clear existing rows
+
+                                // Fill the actor count table
+                                for (var actor in actorCounts) {
+                                    var row = actorCountBody.insertRow();
+                                    var cell1 = row.insertCell(0);
+                                    var cell2 = row.insertCell(1);
+                                    cell1.innerText = actor;
+                                    cell2.innerText = actorCounts[actor];
+                                }
+
+                                // Update pie charrt
+                                updatePieChart(actorCounts);
+                            }
+
+                            // Function to create or update the pie chart
+                            function updatePieChart(actorCounts) {
+                                var labels = Object.keys(actorCounts);
+                                var data = Object.values(actorCounts);
+
+                                var ctx = document.getElementById('pieChart').getContext('2d');
+
+                                if (window.myPieChart) {
+                                    // If the chart already exists, update the data
+                                    window.myPieChart.data.labels = labels;
+                                    window.myPieChart.data.datasets[0].data = data;
+                                    window.myPieChart.update();
+                                } else {
+                                    // If the chart doesn't exist, create a new one
+                                    window.myPieChart = new Chart(ctx, {
+                                        type: 'pie',
+                                        data: {
+                                            labels: labels,
+                                            datasets: [{
+                                                data: data,
+                                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#FF9800', '#673AB7'],
+                                            }],
+                                        },
+                                    });
+                                }
+                            }
+
+                            // Periodically update actor counts 
+                            setInterval(updateActorCounts, 5000); // Update every 5 seconds for demonstration
+                        });
+                    </script>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="metamask.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" />
+</head>
+
+<body>
+    <div class="navbig">
+        <div class="navbar">
+            <!-- Logo on the left -->
+            <div class="logo">
+                <a href="home.html">
+                    <img src="ISMlogo.jpeg" alt="Logo" />
+                </a>
+            </div>
+
+            <!-- Search bar -->
+            <input type="text" id="searchInput" placeholder="Search by name" oninput="searchPersons()">
+            <script>
+
+                function searchPersons() {
+                    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+                    const persons = document.querySelectorAll('.harshal');
+
+                    persons.forEach(person => {
+                        const name = person.querySelector('.name').textContent.toLowerCase();
+
+                        // Check if the name contains the search input
+                        if (name.includes(searchInput)) {
+                            person.style.display = 'block'; // Show the person
+                        } else {
+                            person.style.display = 'none'; // Hide the person
+                        }
+                    });
+                }
+
+                // Initial display of all persons
+                searchPersons();
+            </script>
+
+            <!-- Navbar links -->
+            <ul class="nav-links">
+                <li><a href="Actor2.html">Bollywood</a></li>
+                <li><a href="Game.html">Sports</a></li>
+                <li><a href="sgelections.html">SG Election</a></li>
+                <li><a href="CEO.html">CEO</a></li>
+                <li><a href="Ipl.html">IPL</a></li>
+                <li><a href="carrer2.html">Create Poll</a></li>
+            </ul>
+
+
+
+            <!-- Action buttons on the right -->
+            <button id="connect-button"> 🦊Metamask</button>
+            <script src="metamask.js"></script>
+
+        </div>
+    </div>
+    <style>
+        /* Reset some default styles */
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo img {
+            max-height: 40px;
+        }
+
+        .search-bar {
+            margin-left: 10px;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .action-btn {
+            margin-left: 10px;
+            background-color: #28a745;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .search-bar {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .action-btn {
+                margin-left: auto;
+                margin-right: 10px;
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .candidates {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #111, #333);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Base styles for section title */
+        .section-title {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2rem;
+            /* Adjust the font size as needed */
+            color: #333;
+            /* Set your preferred text color */
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem;
+                /* Adjust the font size for smaller screens */
+            }
+        }
+
+        /* Futuristic design */
+        .section-title::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            /* Set the underline height */
+            background-color: #00bcd4;
+            /* Set the underline color */
+            margin: 10px 0;
+            /* Adjust the spacing between text and underline */
+        }
+
+        /* Animation for futuristic effect */
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            /* Set the underline height */
+            background-color: #00bcd4;
+            /* Set the underline color */
+            margin: 10px 0;
+            /* Adjust the spacing between text and underline */
+            transition: width 0.3s ease-in-out;
+            /* Add a smooth transition effect */
+        }
+
+        .section-title:hover::after {
+            width: 100%;
+            /* Expand the underline on hover */
+        }
+
+        .heading {
+            font-size: 2.5em;
+            /* Increased font size for emphasis */
+            color: #00ffcc;
+            margin-bottom: 15px;
+            /* Slightly increased margin for better spacing */
+        }
+
+        .nominationcandidates1 {
+            font-size: 1.8em;
+            /* Increased font size */
+            color: #66ccff;
+            margin-bottom: 20px;
+            /* Adjusted margin for consistent spacing */
+        }
+
+        .group-1-javascript {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .harshal {
+            width: calc(25% - 20px);
+            margin: 10px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, background-color 0.3s;
+            /* Added background-color transition */
+        }
+
+        .harshal:hover {
+            transform: scale(1.05);
+        }
+
+        .harshal.selected {
+            background-color: #4caf50;
+            /* Green background color when selected */
+        }
+
+        .harshal-icon {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            border-bottom: 2px solid #333;
+        }
+
+
+        .title {
+            padding: 10px;
+        }
+
+        .name {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        .confirm-button-group1 {
+            margin-top: 30px;
+        }
+
+        .heading1 {
+            font-size: 1.5em;
+            color: #66ccff;
+        }
+
+        .text {
+            color: #ccc;
+        }
+
+        .stylesecondary-smallfalse button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #00ffcc;
+            color: #222;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .stylesecondary-smallfalse button:hover {
+            background-color: #007a5e;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form h2 {
+            text-align: center;
+            color: #00ffcc;
+            margin-bottom: 20px;
+        }
+
+        .inputbox {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .inputbox input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #00ffcc;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #333;
+        }
+
+        .inputbox span {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 16px;
+        }
+
+        .sub {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .sub:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        // JavaScript for toggling mobile navigation
+        document.addEventListener("DOMContentLoaded", function () {
+            document
+                .querySelector(".toggle_btn")
+                .addEventListener("click", function () {
+                    document.querySelector(".nav-links").classList.toggle("show");
+                });
+        })
+
+    </script>
+    </div>
+
+    <div class="candidates">
+        <!-- Main container for candidate information -->
+        <div class="g1">
+            <!-- Group 1 container -->
+            <div class="section-title">
+                <!-- Section title containing subheading and content -->
+                <div class="content">
+                    <h1 class="heading">CEO Choice AWard</h1>
+                    <h3 class="nominationcandidates1">Choose Favourite CEO</h3>
+                </div>
+            </div>
+            <style>
+                .section-title {
+                    margin-bottom: 20px;
+                }
+
+                .content {
+                    text-align: center;
+                }
+
+                .heading {
+                    font-size: 1em;
+                    /* Adjust the font size as needed */
+                    color: #007bff;
+                    margin-bottom: 10px;
+                }
+
+                .nominationcandidates1 {
+                    font-size: 0.8em;
+                    /* Adjust the font size as needed */
+                    color: #333;
+                    margin-bottom: 15px;
+                }
+            </style>
+
+            <div class="group-1-javascript">
+                <!-- Container for JavaScript Group 1 -->
+                <div class="group-2-javascript">
+                    <!-- Nested container for JavaScript Group 2 -->
+                    <div class="row">
+                        <!-- Row container for organizing candidate information -->
+
+                        <div class="harshal" id="person1" onclick="selectPerson('person1')">
+                            <img class="harshal-icon"
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/Sundar-Pichai-2.jpg?impolicy=website&width=550&height=300"
+                                alt="Sundar Pichai">
+                            <div class="title">
+                                <!-- Container for the candidate's title information -->
+                                <div class="title">
+                                    <!-- Nested container for the title information -->
+                                    <div class="name">Sundar Pichai</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person2" onclick="selectPerson('person2')">
+                            <img class="harshal-icon"
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/1-Satya-Nadella.jpg?impolicy=website&width=550&height=300"
+                                alt="Satya Nadella">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Satya Nadella</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person3" onclick="selectPerson('person3')">
+                            <img class="harshal-icon"
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/Indra-Nooyi.jpg?impolicy=website&width=550&height=300"
+                                alt="Violin">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Indra Nooyi</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person4" onclick="selectPerson('person4')">
+                            <img class="harshal-icon" alt="" img
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/Sanjay-Mehrotra.jpg?impolicy=website&width=550&height=300"
+                                alt="Drums">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Sanjay Mehrotra </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="harshal" id="person5" onclick="selectPerson('person5')">
+                            <img class="harshal-icon"
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/Vikram-Pandit.jpg?impolicy=website&width=550&height=300"
+                                alt="Flute">
+
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Vikram Pandit</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person6" onclick="selectPerson('person6')">
+                            <img class="harshal-icon"
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/Dinesh-Paliwal.jpg?impolicy=website&width=550&height=300"
+                                alt="Cello">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Dinesh Paliwa</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person7" onclick="selectPerson('person7')">
+                            <img class="harshal-icon"
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/Ajay-Banga.jpg?impolicy=website&width=550&height=300"
+                                alt="Trumpet">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Ajay Banga</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="harshal" id="person8" onclick="selectPerson('person8')">
+                            <img class="harshal-icon" alt=""
+                                src="https://images.cnbctv18.com/wp-content/uploads/2019/12/Nikesh-Arora.jpg?impolicy=website&width=550&height=300"
+                                alt="Saxophone">
+
+                            <div class="title">
+                                <div class="title">
+                                    <div class="name">Nikesh Arora </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="confirm-button-group1">
+                    <!-- Container for the confirmation button group -->
+                    <div class="section-title">
+                        <!-- Container for the section title -->
+                        <b class="heading1">Favourite CEO</b>
+                        <!-- Bold heading for SG Elections 2024 -->
+                        <div class="text">confirm Your Vote</div>
+                        <!-- Subtitle confirming the action to confirm the vote -->
+                    </div>
+                    <div class="stylesecondary-smallfalse">
+                        <button id="confirmButton" onclick="confirmVote()">
+                            Confirm Vote
+                        </button>
+                    </div>
+                </div>
+
+
+                <script>
+                    // Here firstly the given variables used to track the selected person and voting confirmation status
+                    let selectedPerson = null;
+                    let votingConfirmed = false;
+
+                    // Now Function to confirm the vote
+                    function confirmVote() {
+                        // Check then if a person is selected
+                        if (!selectedPerson) {
+                            alert("Please select a person before confirming your vote.");
+                            return;
+                        }
+
+                        // Check if then voting has already been confirmed
+                        if (votingConfirmed) {
+                            alert("Voting has already been confirmed. You cannot confirm again.");
+                            return;
+                        }
+
+                        // Now apply selected style to the chosen person
+                        selectedPerson.classList.add("selected");
+
+                        // Now the actor's name in the input field
+                        const actorNameInput = document.getElementById("phone");
+                        actorNameInput.value = selectedPerson.querySelector('.name').textContent;
+
+                        // Then display confirmation message
+                        alert(`Vote confirmed for ${actorNameInput.value}`);
+
+                        // Then Update voting confirmation status
+                        votingConfirmed = true;
+                    }
+
+                    // Function to select a person
+                    function selectPerson(personId) {
+                        // Check if voting has been confirmed
+                        if (votingConfirmed) {
+                            alert("Voting has been confirmed. You cannot change your selection.");
+                            return;
+                        }
+
+                        // Remove selected style from the previously selected person
+                        if (selectedPerson) {
+                            selectedPerson.classList.remove("selected");
+                        }
+
+                        // used to update the selected person
+                        selectedPerson = document.getElementById(personId);
+                        selectedPerson.classList.add("selected");
+                    }
+                </script>
+                <script type="module" src="CEO.js"></script>
+
+                </head>
+
+                <body>
+                    <div class="box">
+                        <div class="form">
+                            <h2>Save Your Vote</h2>
+                            <form>
+                                <div class="inputbox">
+                                    <input type="text" value="" id="username" required>
+                                    <span>Your Name</span>
+                                </div>
+                                <div class="inputbox">
+                                    <input type="email" value="" id="email" required>
+                                    <span>Your E-mail</span>
+                                </div>
+                                <div class="inputbox">
+                                    <input type="text" value="" id="phone" required readonly>
+                                    <span>CEO Name</span>
+                                </div>
+                                <input type="submit" value="submit" class="sub" id="submit">
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                    <style>
+
+                    </style>
+
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Your Name</th>
+                                <th>Your E-mail</th>
+                                <th>CEO Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Add your dynamic data here -->
+                        </tbody>
+                    </table>
+
+                    <style>
+                        <style>
+
+                        /* Common styles for both tables */
+                        table {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        th,
+                        td {
+                            padding: 8px;
+                            text-align: left;
+                        }
+
+                        tr:hover {
+                            background-color: #7f55be;
+                            /* Hover color for all rows */
+                        }
+
+                        /* Responsive styles for the first table */
+                        @media only screen and (max-width: 600px) {
+
+                            th,
+                            td {
+                                display: block;
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+
+                            th,
+                            td:before {
+                                content: attr(data-label);
+                                font-weight: bold;
+                                display: inline-block;
+                                width: 50%;
+                            }
+                        }
+
+                        /* Responsive styles for the second table */
+                        @media only screen and (max-width: 600px) {
+
+                            #actorCountTable th,
+                            #actorCountTable td {
+                                display: block;
+                                width: 100%;
+                                box-sizing: border-box;
+                            }
+
+                            #actorCountTable th,
+                            #actorCountTable td:before {
+                                content: attr(data-label);
+                                font-weight: bold;
+                                display: inline-block;
+                                width: 50%;
+                            }
+                        }
+                    </style>
+                    </head>
+
+                    <body>
+
+
+
+
+                        <h2>LeaderBoard</h2>
+                        <table border="1" id="actorCountTable">
+                            <thead>
+                                <tr>
+                                    <th>CEO Name</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody id="actorCountBody"></tbody>
+                        </table>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                // Here the Initial setup
+                                updateActorCounts();
+
+                                // Here it's the function to update counting of actor
+                                function updateActorCounts() {
+                                    var tableBody = document.getElementById("tableBody");
+                                    var actorCounts = {};
+
+                                    // Here the Loop through each row in the table
+                                    for (var i = 0; i < tableBody.rows.length; i++) {
+                                        var actorName = tableBody.rows[i].cells[2].innerText;
+
+                                        // Update actor count
+                                        actorCounts[actorName] = (actorCounts[actorName] || 0) + 1;
+                                    }
+
+                                    // Get the actor count table body
+                                    var actorCountBody = document.getElementById("actorCountBody");
+                                    actorCountBody.innerHTML = ""; // Clear existing rows
+
+                                    // Refill the actor count table
+                                    for (var actor in actorCounts) {
+                                        var row = actorCountBody.insertRow();
+                                        var cell1 = row.insertCell(0);
+                                        var cell2 = row.insertCell(1);
+                                        cell1.innerText = actor;
+                                        cell2.innerText = actorCounts[actor];
+                                    }
+                                }
+
+                                // Regularly update actor number in table
+                                setInterval(updateActorCounts, 5000); // Update every 5 seconds for demonstration
+                            });
+                        </script>
+
+
+
+                        <canvas id="pieChart"></canvas>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <style>
+                            h2 {
+                                text-align: center;
+                                margin-bottom: 2.5vw;
+                            }
+
+                            #pieChart {
+                                width: 90%;
+                                max-width: 400px;
+                                height: auto;
+                                margin: 0 auto;
+                                display: block;
+                            }
+
+                            @media screen and (min-width: 768px) {
+
+                                #pieChart {
+                                    width: 70%;
+                                }
+                            }
+
+                            @media screen and (min-width: 1200px) {
+
+                                #pieChart {
+                                    width: 60%;
+                                }
+                            }
+                        </style>
+
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                // Initial setup
+                                updateActorCounts();
+
+                                // Here this is the Function to update actor counts
+                                function updateActorCounts() {
+                                    var tableBody = document.getElementById("tableBody");
+                                    var actorCounts = {};
+
+                                    // Used Loop through each row in the table
+                                    for (var i = 0; i < tableBody.rows.length; i++) {
+                                        var actorName = tableBody.rows[i].cells[2].innerText;
+
+                                        // Here to Update actor count
+                                        actorCounts[actorName] = (actorCounts[actorName] || 0) + 1;
+                                    }
+
+                                    // Now get the actor count table body
+                                    var actorCountBody = document.getElementById("actorCountBody");
+                                    actorCountBody.innerHTML = ""; // Clear existing rows
+
+                                    // Fill the actor count table
+                                    for (var actor in actorCounts) {
+                                        var row = actorCountBody.insertRow();
+                                        var cell1 = row.insertCell(0);
+                                        var cell2 = row.insertCell(1);
+                                        cell1.innerText = actor;
+                                        cell2.innerText = actorCounts[actor];
+                                    }
+
+                                    // Update pie charrt
+                                    updatePieChart(actorCounts);
+                                }
+
+                                // Function to create or update the pie chart
+                                function updatePieChart(actorCounts) {
+                                    var labels = Object.keys(actorCounts);
+                                    var data = Object.values(actorCounts);
+
+                                    var ctx = document.getElementById('pieChart').getContext('2d');
+
+                                    if (window.myPieChart) {
+                                        // If the chart already exists, update the data
+                                        window.myPieChart.data.labels = labels;
+                                        window.myPieChart.data.datasets[0].data = data;
+                                        window.myPieChart.update();
+                                    } else {
+                                        // If the chart doesn't exist, create a new one
+                                        window.myPieChart = new Chart(ctx, {
+                                            type: 'pie',
+                                            data: {
+                                                labels: labels,
+                                                datasets: [{
+                                                    data: data,
+                                                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#FF9800', '#673AB7'],
+                                                }],
+                                            },
+                                        });
+                                    }
+                                }
+
+                                // Periodically update actor counts 
+                                setInterval(updateActorCounts, 5000); // Update every 5 seconds for demonstration
+                            });
+                        </script>
+            </div>
+        </div>
+    </div>
+    <script src="metamask.js"></script>
+</body>
+
+</html>
